@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message system</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="nav">
+            <div class="avatar"></div>
+            <i class="fas fa-inbox"></i>
+            <i class="fas fa-paper-plane"></i>
+            <i class="fas fa-trash-alt"></i>
+
+        </div>
+
+
+        <div class="message-container">
+            <div class="search-container">
+
+                <i class="fas fa-search"></i>
+                <input type="text" name="search" id="search" placeholder="       Search">
+            </div>
+            <div class="sort-container">
+                <div>Sort:</div>
+                <div class="new">Newest</div>
+                <div class="first">First</div>
+            </div>
+
+            <div class="message-area">
+
+                <div class="msg-con">
+                </div>
+
+
+                <div class="msg-con">
+                </div>
+
+
+                <div class="msg-con">
+                </div>
+
+                <div class="msg-con">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>

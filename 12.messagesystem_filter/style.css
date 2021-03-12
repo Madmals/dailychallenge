@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+
+* {
+  box-sizing: border-box;
+}
+body {
+  /* background-image: linear-gradient(90deg, #7d5fff, #7158e2); */
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 30px;
+  display: flex;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 100%;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.avatar {
+  background-color: antiquewhite;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+}
+
+.avatar::after {
+  background-color: greenyellow;
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  left: 10px;
+}
+
+.nav .fas {
+  color: rgb(223, 219, 219);
+  font-size: 40px;
+  margin-top: 40px;
+  padding: 10px;
+}
+
+.nav .fas:hover {
+  border-left: solid green 5px;
+}
+
+.message-container {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.search-container {
+  text-align: center;
+  margin-top: 20px;
+  height: 50px;
+  position: relative;
+}
+
+input {
+  width: 100%;
+  border-radius: 5px;
+  height: 30px;
+}
+
+.fa-search {
+  position: absolute;
+  margin-left: 8px;
+  margin-top: 5px;
+}
+
+.sort-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.sort-container div {
+  margin-right: 10px;
+}
+
+.message-area {
+  overflow: scroll;
+  width: 100%;
+  height: 100%;
+  overflow-x: scroll ;
+}
+
+.msg-con {
+  display: flex;
+  width: 100%;
+  height: 30%;
+  border: solid rgb(224, 218, 218) 1px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+
+}
+
+.left-message {
+    min-width: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    
+
+}
+
+img{
+  background-color: antiquewhite;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.love-red{
+    color: red;
+}
+
+.avatar-contact {
+  background-color: antiquewhite;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fa-heart{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.right-message{
+    padding: 10px;
+   width: 100%;
+}
+
+.name-area{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.topic{
+    margin-top: 5px;
+}
+
+
+.hide{
+  display: none;
+}
