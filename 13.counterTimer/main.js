@@ -83,3 +83,29 @@ svg.style.setProperty('--start-minutes', currentTime.getMinutes());
 svg.style.setProperty('--start-hours', currentTime.getHours() % 12);
 
 
+
+var array1 = [true, true, true, false,
+    true, true, true, true,
+    true, false, true, false,
+    true, false, false, true,
+    true, true, true, true,
+    false, false, true, true];
+
+
+
+
+function countSheeps(array1) {
+    let counter = 0
+    d = []
+    for (i = 0; i < array1.length; i++) {
+        for (j = 0; j < i.length; j++)
+    
+                d.push([i][j])
+            
+    }
+    console.log(d)
+}
+
+countSheeps(array1)
+
+
