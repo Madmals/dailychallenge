@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
   margin: 0;
@@ -155,34 +156,71 @@ body {
   margin-top: 10px;
   display: flex;
   flex-direction: column;
-  height: 400px;
+  height: 500px;
   overflow-y: scroll;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 .container .card-area .card {
+  height: 400px;
   display: flex;
+  flex-direction: row;
   align-items: center;
+  margin-top: 10px;
+}
+.container .card-area .card .img-container {
+  width: 150px;
+  height: 100px;
+  background-color: #f3f0f0;
+}
+.container .card-area .card .img-container img {
+  width: 150px;
+  height: 100px;
+  object-fit: contain;
 }
 .container .card-area .card .number {
   display: flex;
   align-items: center;
   height: 40px;
-  background-color: #dad6d6;
 }
-.container .card-area .text .star-area {
+.container .card-area .card .text {
+  display: flex;
+  flex-direction: column;
+}
+.container .card-area .card .text .star-area {
   display: flex;
   margin-top: 5px;
 }
-.container .card-area .text .star-area .star {
-  color: #fff;
-  margin-left: 5px;
+.container .card-area .card .text .star-area .rel {
+  margin-right: 20px;
 }
-.container .card-area .text .star-area .fa-star {
-  -webkit-text-fill-color: gold;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
+.container .card-area .card .text .star-area .stars-outer {
+  position: relative;
+  display: inline-block;
 }
-.container .card-area .text .btn {
+.container .card-area .card .text .star-area .stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+.container .card-area .card .text .star-area .stars-outer::before {
+  content: "";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #ccc;
+}
+.container .card-area .card .text .star-area .stars-inner::before {
+  content: "";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #f8ce0b;
+}
+.container .card-area .card .text .tag {
+  margin-top: 5px;
+}
+.container .card-area .card .text .tag .btn {
   margin-right: 5px;
   background-color: #0398E5;
   border: none;
