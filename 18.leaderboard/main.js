@@ -5,20 +5,31 @@ const card_area = document.querySelector(".card-area")
 const image_url = 'https://image.tmdb.org/t/p/w1280'
 
 
+let urls = ["https://api.themoviedb.org/3/trending/movie/week?api_key=7d01ce9433d80be3efed5507c5508810", "https://api.themoviedb.org/3/genre/movie/list?api_key=7d01ce9433d80be3efed5507c5508810&language=en-US"]
 
 
 
 
 
 const trending = async () => {
-    let res = await fetch("https://api.themoviedb.org/3/trending/movie/week?api_key=7d01ce9433d80be3efed5507c5508810")
+
+    let res = await fetch(urls[0])
     let data = await res.json()
     console.log(data)
+
     show_movies(data.results)
     get_rating()
 
-
 }
+
+const tag = async ()=>{
+    let res = await fetch(urls[1])
+    let data = await res.json()
+    // console.log(data.genres)
+    show_tag(data.genres)
+}
+
+
 
 const show_movies = (movie) => {
 
@@ -58,7 +69,6 @@ const show_movies = (movie) => {
                     <div class="tag">
                         <button type="text" class="btn">Drama</button>
 
-                        <button type="text" class="btn">Romance</button>
                     </div>
                     </div>
 
@@ -71,6 +81,18 @@ const show_movies = (movie) => {
         card_area.appendChild(card_movie)
 
     })
+}
+
+const show_tag = async(tags)=>{
+    const tag = document.querySelectorAll(".btn")
+    tags.forEach(eachres=>{
+        console.log(eachres)
+    })
+
+
+    for (let i=0; i<=tag.length;i++){
+        tag[i].innerHTML = tags[i].name
+    }
 }
 
 
@@ -99,7 +121,7 @@ const get_rating = () => {
 
     a.forEach((list) => {
         list.style.width = star_percentage_rounded
-        console.log(star_percentage_rounded)
+        // console.log(star_percentage_rounded)
     })
 
     })
@@ -107,7 +129,9 @@ const get_rating = () => {
 
 }
 
+const run = async()=>{
+    await Promise.all([trending(),tag()])
+}
 
 
-
-trending()
+run()
