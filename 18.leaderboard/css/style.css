@@ -220,7 +220,7 @@ body {
 .container .card-area .card .text .tag {
   margin-top: 5px;
 }
-.container .card-area .card .text .tag .btn {
+.container .card-area .card .text .tag .add {
   margin-right: 5px;
   background-color: #0398E5;
   border: none;

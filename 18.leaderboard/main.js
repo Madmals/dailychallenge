@@ -8,9 +8,6 @@ const image_url = 'https://image.tmdb.org/t/p/w1280'
 let urls = ["https://api.themoviedb.org/3/trending/movie/week?api_key=7d01ce9433d80be3efed5507c5508810", "https://api.themoviedb.org/3/genre/movie/list?api_key=7d01ce9433d80be3efed5507c5508810&language=en-US"]
 
 
-
-
-
 const trending = async () => {
 
     let res = await fetch(urls[0])
@@ -32,100 +29,13 @@ const trending = async () => {
 }
 
 
-trending().then(each_genre_id => {
-    each_genre_id.forEach(eachothers => {
-
-        // console.log(eachothers.length)
-        tag().then(data_genre => {
-
-
-
-            var abbb = []
-            data_genre.forEach(eachofgenre => {
-                // console.log(Object.values(eachofgenre)[0])
-                let test = Object.values(eachofgenre)
-
-
-//stuck here
-
-                for (let i = 0; i < eachothers.length; i++) {
-                    for (let j = 0; j < test.length; j++) {
-                        if (eachothers[i] === test[j]) {
-                            abbb.push(('a'))
-                            console.log(abbb.length)
-                            // console.log(test[1])
-
-
-
-                        }
-
-                    }
-                }
-
-
-            })
-
-            // const num = document.querySelector(".number")
-            // let tag = document.querySelectorAll('.tag')
-            // num.innerHTML = 0
-
-
-            // for (let i = 0; i < abbb.length; i++) {
-
-            //     let newtags = document.createElement('button')
-            //     newtags.innerHTML = 'dfdfas'
-            //     tag[i].append(newtags)
-
-            // }
-
-            // for(let i=0; i<abbb.length; i++) {
-            //     for(j=0; j<abbb[i].length; j++) {
-            //         console.log(abbb[i].length)
-            //     }
-            // }
-
-
-
-            // return abbb
-            console.log(abbb)
-        })
-    })
-
-
-})
-
-
-let d = () => {
-    trending().then(abbb => {
-        const num = document.querySelector(".number")
-        console.log(num)
-        let tag = document.querySelectorAll('.tag')
-        num.innerHTML = 0
-
-
-        for (let i = 0; i < tag.length; i++) {
-
-            let newtags = document.createElement('button')
-            newtags.innerHTML = 'dfdfas'
-            tag[i].append(newtags)
-
-        }
-
-    })
-
-}
-
-
-
 
 const tag = async () => {
     let res = await fetch(urls[1])
     let data = await res.json()
     let data_genre = data.genres
-    // console.log(data.genres)
     return data_genre
 }
-
 
 
 
@@ -180,56 +90,7 @@ const show_movies = (movie) => {
 
 
     })
-    // show_tag()
 }
-
-
-
-
-
-// const show_tag = () => {
-
-
-//     let tag = document.querySelectorAll('.tag')
-
-//     tag.forEach(eachtag => {
-
-//         let newtag = document.createElement('button')
-//         newtag.innerHTML = 'abu'
-//         eachtag.appendChild(newtag)
-
-
-
-
-
-//     })
-
-
-
-
-
-// oneoftag.forEach(each => {
-
-// })
-
-// <button type="text" class="btn">Drama</button>
-
-// for (let i = 0; i <= tag.length; i++) {
-// tag[i].innerHTML =
-// }
-
-
-
-// }
-
-
-
-
-
-
-
-
-
 
 
 const get_rating = () => {
@@ -264,7 +125,36 @@ const get_rating = () => {
 }
 
 const run = async () => {
-    await Promise.all([trending(), tag(), d()])
+    const [a, b] = await Promise.all([trending(), tag()])
+    let data = a.map(eachofa => eachofa.map(id => b.filter(bitem => bitem.id === id).map(item => item.name)).join(" "))
+    console.log(data)
+
+
+    let tags = document.querySelectorAll('.tag')
+
+    1
+
+    for (let i = 0; i < data.length; i++) {
+
+        for (i = 0; i < tags.length; i++) {
+
+            let newtag = document.createElement('div')
+            newtag.classList.add(".add")
+            newtag.style.marginRight = "5px"
+            newtag.style.fontWeight = "700"
+            newtag.innerHTML = data[i]
+            tags[i].appendChild(newtag)
+
+
+        }
+
+    }
+
+
+
+
+
+
 }
 
 
