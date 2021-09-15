@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif;
+  height: 100%;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  height: 90vh;
+  width: 80vw;
+  background-color: #00b0ff;
+  color: #fff;
+  padding: 2% 5%;
+}
+
+.header__nav {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  height: 5vh;
+}
+
+.header__navcon {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 10%;
+  align-items: center;
+  height:5vh;
+}
+
+.header__task{
+	text-align:right;
+	padding-right: 4vw;
+}
+
+.header__task input{
+	border: 1px solid transparent;
+	height:4vh;
+	width:18vw;
+	padding-top: 1vh;
+	font-size:20px;
+	border-radius:5px;
+}
+
+.header__task input:focus{
+	border: none;
+	outline: none;
+}
+
+.fa-calendar-plus{
+	font-size:30px;
+	cursor: pointer;
+}
+
+.fa-calendar-plus:hover{
+	color: #606364;
+}
+
+
+.fa-sync{
+	color: #606364;
+	font-size: 30px;
+	cursor: pointer;
+}
+
+.fa-sync:hover{
+	font-size: 40px;
+
+}
+
+
+.header__countdown {
+  text-align: center;
+  font-size: 22px;
+}
+
+.header__btn {
+  text-align: center;
+  padding-bottom: 2vh;
+}
+
+button {
+  width: 20vw;
+  height: 8vh;
+  border-radius: 25px;
+  background: aliceblue;
+  border: none;
+  font-size: 16px;
+  transition:background-color 1s ease-in;
+}
+
+button:hover{
+	background-color: #89ddf7;
+	border: 2px solid black;
+}
+
+.stop {
+  padding-left: 2vw;
+}
+
+main {
+  overflow-y: scroll;
+  height: 50%;
+  margin: 5vh;
+  /* border: 1px solid black; */
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+  color:black;
+  background-color:aliceblue
+}
+
+.main__job{
+	display: flex;
+	justify-content: space-between;
+	padding: 0 5vw 0 4vw;
+	transition: all 2s ease-out;
+}
+
+.main__job:hover{
+	background-color:#00b0ff;
+}
+
+.main__icon{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width:10vw
+}
+
+.no{
+	width:2vw;
+	padding: 5px;
+	margin-right: 2vw;
+}
+
+.fa-backspace{
+	color: rgb(216, 73, 73);
+	cursor: pointer;
+}
+
+.fa-backspace:hover{
+	font-size: 30px;
+}
+
+
+
+/* input placeholder  */
+
+.red{
+	border: 2px solid red !important;
+
+}
