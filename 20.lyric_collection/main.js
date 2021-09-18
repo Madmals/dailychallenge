@@ -117,12 +117,7 @@ clear_all.addEventListener('click', () => {
 })
 
 
-
 show_col()
-
-
-
-
 
 
 
