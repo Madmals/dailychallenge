@@ -39,7 +39,7 @@ add_task.addEventListener('click', (e) => {
 })
 
 
-
+//show task all
 const show_task = () => {
 	let tasks = localStorage.getItem('task')
 
