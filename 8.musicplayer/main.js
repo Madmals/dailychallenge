@@ -53,16 +53,9 @@
 //since im not capable using spotify api at my current level understanding i  move to get simple music play and pause music
 
 
-
 const audio = document.getElementById('aud')
-
-
 const play = document.querySelector('.play')
-
 const pause = document.querySelectorAll('.pause1')
-
-console.log(pause)
-
 
 play.addEventListener('click', () => {
     aud.play()
